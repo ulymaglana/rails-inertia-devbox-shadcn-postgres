@@ -18,14 +18,42 @@ See also:
 <img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Built by Evil Martians" width="236" height="54">
 </a>
 
+## Prerequisites
+
+This project uses [Devbox](https://www.jetify.com/devbox) to manage development dependencies (Ruby, libpq).
+
+### Install Devbox
+
+```bash
+curl -fsSL https://get.jetify.com/devbox | bash
+```
+
+### Common Devbox Commands
+
+```bash
+devbox shell      # Enter the development shell with all dependencies
+devbox run <cmd>  # Run a command inside the Devbox environment
+devbox update     # Update packages to latest versions
+devbox info       # Show installed packages
+```
+
 ## Setup
 
 1. Clone this repository
-2. Setup dependencies & run the server:
+2. Enter the Devbox shell:
+   ```bash
+   devbox shell
+   ```
+3. Create a `.env` file in the project root:
+   ```bash
+   DATABASE_URL=postgresql://postgres:mysecretpassword@localhost:5434/rails-test-apps1
+   RAILS_ENV=development
+   ```
+4. Setup dependencies & run the server:
    ```bash
    bin/setup
    ```
-3. Open http://localhost:3000
+5. Open http://localhost:3000
 
 ## Enabling SSR
 
