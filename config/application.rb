@@ -2,6 +2,11 @@
 
 require_relative "boot"
 
+if ENV.fetch("RAILS_ENV", "development") == "development"
+  require "dotenv"
+  Dotenv.load
+end
+
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
